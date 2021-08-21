@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 use work.COMPONENTS.all;
 
 entity ALARMCLOCK is
-generic(FREUQUENCY : integer:=10);
+generic(FREUQUENCY : integer);
     port(
     RESET , CLK : in std_logic;
     H_IN1 : in std_logic_vector(1 downto 0);
@@ -156,7 +156,7 @@ FSM_FF : process(CLK,RESET)
 end process FSM_FF;
 
 FSM_LOGIC: process(STATE,CLOCK_ON,SET_TIME,SET_ALARM,ALARM_ON,STOP_ALARM,CURH,CURM,CURS,ALARM_M,ALARM_H)
-variable TEN_SECONDS: integer :=10;          
+variable TEN_SECONDS: integer := 9;          
 begin
     case(STATE) is
         when START =>
