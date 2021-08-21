@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 use work.COMPONENTS.all;
 
 entity ALARMCLOCK is
-generic(FREUQUENCY : integer);
+generic(FREUQUENCY : integer:=10);
     port(
     RESET , CLK : in std_logic;
     H_IN1 : in std_logic_vector(1 downto 0);
@@ -191,7 +191,7 @@ begin
             if(ALARM_ON = '0' or STOP_ALARM = '1' or (CURH = ALARM_H and CURM = ALARM_M and CURS > TEN_SECONDS)) then
                 ALARM <= '0';
                 NEXT_STATE <= WORK_NORMAL;
-            elsif(CURH = ALARM_H and CURM = ALARM_M and CURS < TEN_SECONDS) then
+            elsif(CURH = ALARM_H and CURM = ALARM_M and CURS <= TEN_SECONDS) then
                 ALARM <= '1';
                 NEXT_STATE <= BUZZER_ON;
             end if;
