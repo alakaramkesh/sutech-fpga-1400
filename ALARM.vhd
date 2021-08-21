@@ -132,7 +132,7 @@ H0 : BIN_TO_7SEGMENT port map (B => H_out0_b, SEGMENT => H_OUT0);
 end Behavioral;
 
 library ieee;
-use ieee.STD_LOGIC_1164.all;
+use ieee.std_logic_1164.all;
 
 entity FSM is
 port(
@@ -201,7 +201,7 @@ begin
 end Behavioral;
 
 library ieee;
-use ieee.STD_LOGIC_1164.all;
+use ieee.std_logic_1164.all;
 
 entity BIN_TO_7SEGMENT is
 port (
